@@ -20,3 +20,4 @@ class Manager:
             print("password xato.\n")
         
         self.user = User(name, username, password)
+
