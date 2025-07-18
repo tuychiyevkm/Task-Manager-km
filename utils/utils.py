@@ -1,5 +1,5 @@
 from hashlib import sha256
-
+from termcolor import colored
 
 def print_main() -> None:
     print('1. Sign In')
@@ -14,3 +14,11 @@ def is_valid_name(name):
 
 def make_password(password):
     return sha256(password.encode()).hexdigest()
+
+def print_satatus(text, status='success'):
+    status_map = {
+        'error': 'red',
+        'success': 'green'
+    }
+    print(colored(text, status_map[status]))
+    

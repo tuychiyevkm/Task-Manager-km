@@ -6,14 +6,14 @@ class User:
         self.user_id = str(uuid1())
         self.name = name
         self.username = username
-        self.pasword = password
+        self.password = password
 
     def to_dict(self) -> dict:
         return {
             'user_id': self.user_id,
             'name': self.name,
             'username': self.username,
-            'password': self.pasword,
+            'password': self.password,
         }
     
     @classmethod

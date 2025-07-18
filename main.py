@@ -10,7 +10,7 @@ def main() -> None:
         op = input("> ")
 
         if op == '1':
-            pass
+            manager.login()
         elif op == '2':
             manager.register()
         elif op == '3':

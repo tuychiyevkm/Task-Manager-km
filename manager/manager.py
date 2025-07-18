@@ -1,6 +1,6 @@
 import json
 from getpass import getpass
-from utils import is_valid_password, is_valid_name, make_password
+from utils import is_valid_password, is_valid_name, make_password, print_satatus
 from models import User
 
 
@@ -26,6 +26,20 @@ class Manager:
             self.users.append(User(name, username, make_password(password)))
             self.save_users()
             print("muvaffaqiyatli royxatdan otdingiz.")
+
+    def login(self):
+        username = input("username: ")
+        password = getpass("password: ")
+
+        hashed_password = make_password(password)
+
+        for user in self.users:
+            if user.username == username and user.password == hashed_password:
+                print_satatus("muvaffaqiyatli kirdingiz.")
+                self.user = user
+                return True
+        print_satatus("user topilmadi.", "error")
+        return False
 
     @staticmethod
     def load_users():
