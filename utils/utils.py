@@ -6,6 +6,11 @@ def print_main() -> None:
     print('2. Sign Up')
     print('3. Quit')
 
+def print_menu() -> None:
+    print('1. Task Yaratish')
+    print('2. Tasklarni Ko\'rish')
+    print('3. Quit')
+
 def is_valid_password(password):
     return len(password) >= 8
 

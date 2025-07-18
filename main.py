@@ -1,16 +1,21 @@
 import sys
-from utils import print_main
+from utils import print_main, print_satatus, print_menu
 from manager import Manager
 
 def main() -> None:
     manager = Manager()
 
-    while not manager.user:
+    while True:
         print_main()
         op = input("> ")
 
         if op == '1':
-            manager.login()
+            if manager.login():
+                while manager.user:
+                    print_satatus(f"{manager.user.name} sizni accounting.")
+                    print_menu()
+
+                    choice = input(">")
         elif op == '2':
             manager.register()
         elif op == '3':
