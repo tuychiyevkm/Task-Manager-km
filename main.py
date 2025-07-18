@@ -5,7 +5,7 @@ from manager import Manager
 def main() -> None:
     manager = Manager()
 
-    while True:
+    while not manager.user:
         print_main()
         op = input("> ")
 

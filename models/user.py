@@ -1,21 +1,24 @@
-from hashlib import sha256
+from uuid import uuid1
+
 
 class User:
-    users = []
-
     def __init__(self, name, username, password):
-        hashed_password = sha256(password.encode()).hexdigest()
-
-        self.user_id = 1
+        self.user_id = str(uuid1())
         self.name = name
         self.username = username
-        self.pasword = hashed_password
+        self.pasword = password
 
-        User.users.append(self)
-
+    def to_dict(self) -> dict:
+        return {
+            'user_id': self.user_id,
+            'name': self.name,
+            'username': self.username,
+            'password': self.pasword,
+        }
+    
     @classmethod
-    def check_username(cls, username):
-        for user in cls.users:
-            if user.username == username:
-                return True
-        return False
+    def from_dict(cls, data: dict):
+        user = cls(data['name'], data['username'], data['password'])
+        user.user_id = data['user_id']
+        return user
+    
