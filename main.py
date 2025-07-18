@@ -16,6 +16,19 @@ def main() -> None:
                     print_menu()
 
                     choice = input(">")
+
+                    if choice == '1':
+                        manager.add_task()
+                    elif choice == '2':
+                        pass
+                    elif choice == '3':
+                        pass
+                    elif choice == '4':
+                        pass
+                    elif choice == '5':
+                        manager.user = None
+                    else:
+                        print("xato menu")
         elif op == '2':
             manager.register()
         elif op == '3':

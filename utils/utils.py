@@ -9,7 +9,9 @@ def print_main() -> None:
 def print_menu() -> None:
     print('1. Task Yaratish')
     print('2. Tasklarni Ko\'rish')
-    print('3. Quit')
+    print('3. Taskni bajarildi qilish')
+    print('4. Bajarilmagan tasklarni korish')
+    print('5. Quit')
 
 def is_valid_password(password):
     return len(password) >= 8
