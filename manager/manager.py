@@ -91,3 +91,17 @@ class Manager:
             tasks.append(task)
             json.dump(tasks, jsonfile, indent=4)
 
+    def show_tasks(self):
+
+        with open('data/tasks.json') as jsonfile:
+            try:
+                tasks = json.load(jsonfile)
+            except:
+                tasks = []
+
+        print("Hamma Tasklar")
+        if tasks:
+            for counter, task in enumerate(tasks, start=1):
+                print(f"{counter}. {task['title']}, {task['completed']}, {task['deatline']}")
+        else:
+            print("task mavjud emas.")
