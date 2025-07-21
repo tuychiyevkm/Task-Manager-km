@@ -153,4 +153,18 @@ class Manager:
         else:
             print("task mavjud emas.")
 
+    def show_incompleted_tasks(self):
+        with open('data/tasks.json') as jsonfile:
+            try:
+                all_tasks = json.load(jsonfile)
+                tasks = list(filter(
+                    lambda task: task['user_id'] == self.user.user_id and task['completed'] == False,
+                    all_tasks
+                ))
+            except:
+                tasks = []
         
+        print("Bajarilmagan Tasklar")
+        if tasks:
+            for counter, task in enumerate(tasks, start=1):
+                print(f"{counter}. {task['title']}, {task['completed']}, {task['deatline']}")

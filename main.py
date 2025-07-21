@@ -24,7 +24,7 @@ def main() -> None:
                     elif choice == '3':
                         manager.masrk_as_completed()
                     elif choice == '4':
-                        pass
+                        manager.show_incompleted_tasks()
                     elif choice == '5':
                         manager.user = None
                     else:
