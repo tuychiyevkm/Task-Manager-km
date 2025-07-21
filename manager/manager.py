@@ -72,7 +72,19 @@ class Manager:
         created_at = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
         deatline = input('deatline: ')
 
+        with open('data/tasks.json') as jsonfile:
+            try:
+                tasks = json.load(jsonfile)
+            except:
+                tasks = []
+
+        if tasks:
+            last_id = tasks[-1]['task_id']
+        else:
+            last_id = 0
+
         task = {
+            'task_id': last_id + 1,
             'user_id': self.user.user_id,
             'title': title,
             'description': description,
@@ -96,6 +108,10 @@ class Manager:
         with open('data/tasks.json') as jsonfile:
             try:
                 tasks = json.load(jsonfile)
+                tasks = list(filter(
+                    lambda task: task['user_id'] == self.user.user_id,
+                    tasks
+                ))
             except:
                 tasks = []
 
@@ -105,3 +121,36 @@ class Manager:
                 print(f"{counter}. {task['title']}, {task['completed']}, {task['deatline']}")
         else:
             print("task mavjud emas.")
+
+    def masrk_as_completed(self):
+
+        with open('data/tasks.json') as jsonfile:
+            try:
+                all_tasks = json.load(jsonfile)
+                tasks = list(filter(
+                    lambda task: task['user_id'] == self.user.user_id and task['completed'] == False,
+                    all_tasks
+                ))
+            except:
+                tasks = []
+        
+        print("Bajarilmagan Tasklar")
+        if tasks:
+            for counter, task in enumerate(tasks, start=1):
+                print(f"{counter}. {task['title']}, {task['completed']}, {task['deatline']}")
+            index = int(input("qaysi taskni bajarildi qilmoqchisiz: "))
+
+            task_id = tasks[index - 1]['task_id']
+
+            with open('data/tasks.json', 'w') as jsonfile:
+                for i, task in enumerate(all_tasks):
+                    if task['task_id'] == task_id:
+                        all_tasks[i]['completed'] = True
+
+                json.dump(all_tasks, jsonfile, indent=4)
+
+            print('bajarildi qilindi.')
+        else:
+            print("task mavjud emas.")
+
+        

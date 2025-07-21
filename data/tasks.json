@@ -1,42 +1,20 @@
 [
     {
+        "task_id": 1,
         "user_id": "d5be9a2a-638d-11f0-9ba6-1e178c571429",
-        "title": "yugirish",
-        "description": "ertalab 3 km yugurishim kerak",
-        "created_at": "07/18/2025, 10:32:35",
-        "deatline": "ertaga 6 dan 7 gacha",
-        "completed": false
-    },
-    {
-        "user_id": "d5be9a2a-638d-11f0-9ba6-1e178c571429",
-        "title": "kitib oqish",
-        "description": "kfndskajfnk",
-        "created_at": "07/18/2025, 10:33:07",
-        "deatline": "fknjdskfasd",
-        "completed": false
-    },
-    {
-        "user_id": "d5be9a2a-638d-11f0-9ba6-1e178c571429",
-        "title": "fndsalf",
-        "description": "fdasfasd",
-        "created_at": "07/18/2025, 10:34:10",
-        "deatline": "fasdfsad",
-        "completed": false
-    },
-    {
-        "user_id": "c2d825a2-638d-11f0-9ba6-1e178c571429",
-        "title": "maktabga borish",
-        "description": "fadsfa",
-        "created_at": "07/18/2025, 10:34:43",
-        "deatline": "fadsfas",
-        "completed": false
-    },
-    {
-        "user_id": "d5be9a2a-638d-11f0-9ba6-1e178c571429",
-        "title": "nimafdsaf",
-        "description": "fasdkjfnksd",
-        "created_at": "07/21/2025, 08:40:19",
+        "title": "yugurish",
+        "description": "fasdlkfnas",
+        "created_at": "07/21/2025, 09:00:39",
         "deatline": "12-12-2012",
-        "completed": false
+        "completed": true
+    },
+    {
+        "task_id": 2,
+        "user_id": "d5be9a2a-638d-11f0-9ba6-1e178c571429",
+        "title": "kitob oqish",
+        "description": "dkfnasd",
+        "created_at": "07/21/2025, 09:02:22",
+        "deatline": "12-13-2013",
+        "completed": true
     }
 ]

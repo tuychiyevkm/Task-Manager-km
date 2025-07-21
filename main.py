@@ -22,7 +22,7 @@ def main() -> None:
                     elif choice == '2':
                         manager.show_tasks()
                     elif choice == '3':
-                        pass
+                        manager.masrk_as_completed()
                     elif choice == '4':
                         pass
                     elif choice == '5':
